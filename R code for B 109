@@ -1,0 +1,11 @@
+title = "Distribution of U.S. Crude Oil Stocks",
+    x = "U.S. Crude Oil Stocks (Thousand Barrels)",
+    y = "Frequency"
+  ) +
+  theme_minimal()
+ggplot(fuel_corr, aes(x = Inventory)) +
+  geom_histogram(bins = 30) +
+  labs(
+    title = "Distribution of U.S. Gasoline Stocks",
+    x = "U.S. Gasoline Stocks (Thousand Barrels)",
+    y = "Frequency"
