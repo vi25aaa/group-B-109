@@ -1,10 +1,7 @@
-library(ggplot2)
-library(dplyr)
-
-fuel_corr <- fuel %>%
-  transmute(
-    Production = `U.S..Crude.Oil.Stocks..Thousand.Barrels.`,
-    Inventory  = `U.S..Gasoline.Stocks..Thousand.Barrels.`
-  )
-
 fuel_corr <- na.omit(fuel_corr)
+
+summary(fuel_corr)
+ggplot(fuel_corr, aes(x = Production, y = Inventory)) +
+  geom_point(alpha = 0.6) +
+  geom_smooth(method = "lm", se = TRUE) +
+  labs(
