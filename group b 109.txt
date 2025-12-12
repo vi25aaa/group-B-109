@@ -1,0 +1,10 @@
+library(ggplot2)
+library(dplyr)
+
+fuel_corr <- fuel %>%
+  transmute(
+    Production = `U.S..Crude.Oil.Stocks..Thousand.Barrels.`,
+    Inventory  = `U.S..Gasoline.Stocks..Thousand.Barrels.`
+  )
+
+fuel_corr <- na.omit(fuel_corr)
