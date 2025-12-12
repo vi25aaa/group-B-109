@@ -1,7 +1,8 @@
-fuel_corr <- na.omit(fuel_corr)
-
-summary(fuel_corr)
-ggplot(fuel_corr, aes(x = Production, y = Inventory)) +
-  geom_point(alpha = 0.6) +
-  geom_smooth(method = "lm", se = TRUE) +
+title = "Relationship Between U.S. Crude Oil and Gasoline Stocks",
+    x = "U.S. Crude Oil Stocks (Thousand Barrels)",
+    y = "U.S. Gasoline Stocks (Thousand Barrels)"
+  ) +
+  theme_minimal()
+ggplot(fuel_corr, aes(x = Production)) +
+  geom_histogram(bins = 30) +
   labs(
